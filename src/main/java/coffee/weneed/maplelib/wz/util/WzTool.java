@@ -71,13 +71,11 @@ public class WzTool {
 		}
 	}
 
-	public static int RotateLeft(int x, byte n) // TODO Uint32
-	{
+	public static int RotateLeft(int x, byte n) { // TODO Uint32
 		return x << n | x >> 32 - n;
 	}
 
-	public static int RotateRight(int x, byte n) // TODO Uint32
-	{
+	public static int RotateRight(int x, byte n) { // TODO Uint32
 		return x >> n | x << 32 - n;
 	}
 

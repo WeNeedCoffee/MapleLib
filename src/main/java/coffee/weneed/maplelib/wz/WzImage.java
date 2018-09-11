@@ -1,20 +1,18 @@
 package coffee.weneed.maplelib.wz;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-import coffee.weneed.maplelib.wz.properties.WzSubProperty;
+public class WzImage extends WzObject implements IPropertyContainer {
 
-public class WzImage extends WzSubProperty {
+	protected boolean parsed;
 
-	protected boolean mParsed;
-
-	protected boolean initialParse;
-
-	protected int mSize, checksum;
+	protected int size, checksum;
 
 	protected int mOffset; // TODO unsigned?
 	// protected WzBinaryReader mReader;
+	// protected List<WzImageProperty> properties = new ArrayList<WzImageProperty>();
 
 	protected int mBlockStart;
 
@@ -24,13 +22,39 @@ public class WzImage extends WzSubProperty {
 
 	protected Set<WzImage> referencedImgs = new HashSet<>();
 
-	@Override
-	public AWzObject getParent() { // TODO Redundant @See WzSubProperty
-		return mParent;
+	public WzImage(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	protected void setParent(AWzObject parent) { // TODO Redundant @See WzSubProperty
-		mParent = parent;
+	public void AddProperties(List<WzImageProperty> props) {
+		// TODO Auto-generated method stub
+
 	}
+
+	@Override
+	public void AddProperty(WzImageProperty prop) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void ClearProperties() {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<WzImageProperty> getProperties() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void RemoveProperty(WzImageProperty prop) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

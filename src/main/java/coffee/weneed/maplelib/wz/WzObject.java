@@ -1,20 +1,29 @@
 package coffee.weneed.maplelib.wz;
 
-public abstract class AWzObject {
+public abstract class WzObject {
 
-	private String name;
+	protected String name;
 
-	private AWzObject parent;
+	protected WzObject parent;
 
-	private WzObjectType objectType;
+	protected WzObjectType objectType;
 
-	private Object tag;
+	protected Object tag = null;
+
+	protected Object tag2 = null;
+
+	protected Object tag3 = null;
 
 	protected Object wzvalue;
 
+	public WzObject(String name) {
+		this.name = name;
+	}
+
 	public String getFullPath() {
+		// if (this instanceof WzFile) return ((WzFile)this).WzDirectory.Name;
 		String result = getName();
-		AWzObject currObj = this;
+		WzObject currObj = this;
 		while (currObj.getParent() != null) {
 			currObj = currObj.getParent();
 			result = currObj.getName() + "\\" + result;
@@ -30,7 +39,7 @@ public abstract class AWzObject {
 		return objectType;
 	}
 
-	public AWzObject getParent() {
+	public WzObject getParent() {
 		return parent;
 	}
 
@@ -42,7 +51,7 @@ public abstract class AWzObject {
 		this.name = name;
 	}
 
-	protected void setParent(AWzObject parent) {
+	protected void setParent(WzObject parent) {
 		this.parent = parent;
 	}
 

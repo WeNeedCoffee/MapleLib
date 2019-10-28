@@ -1,18 +1,22 @@
 package coffee.weneed.maplelib.wz;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import coffee.weneed.maplelib.wz.util.WzBinaryReader;
 
 public class WzImage extends WzObject implements IPropertyContainer {
 
-	protected boolean parsed;
+	public static final int WzImageHeaderByte = 0x73;
+	
+	protected boolean parsed = false;
 
 	protected int size, checksum;
 
 	protected int mOffset; // TODO unsigned?
-	// protected WzBinaryReader mReader;
-	// protected List<WzImageProperty> properties = new ArrayList<WzImageProperty>();
+	protected WzBinaryReader mReader;
+	protected List<WzImageProperty> properties = new ArrayList<WzImageProperty>();
 
 	protected int mBlockStart;
 
